@@ -14,22 +14,34 @@ namespace VarMıYokMu_08012021
             Console.WriteLine("Bir şehir giriniz:");
             string girilenSehir = Console.ReadLine();
             bool varMi = false;
-            foreach(string sehir in sehirler)
+             /* foreach(string sehir in sehirler)
+             {
+                 if (sehir == girilenSehir)
+                 {
+                     varMi = true;
+                     break;
+                 }
+             }
+             if (varMi)
+             {
+                 Console.WriteLine($"{girilenSehir} arrey'de var.");
+             }
+             else
+             {
+                 Console.WriteLine($"{girilenSehir} arrey'de yok.");
+             }
+            */
+            for (int i = 0; i < sehirler.Length; i++)
             {
-                if (sehir == girilenSehir)
+                if (sehirler[i] == girilenSehir)
                 {
+                    Console.WriteLine($"{girilenSehir} arrayde vardır. İndeks numarası: {i} ' dir.");
                     varMi = true;
                     break;
                 }
             }
-            if (varMi)
-            {
-                Console.WriteLine($"{girilenSehir} arrey'de var.");
-            }
-            else
-            {
-                Console.WriteLine($"{girilenSehir} arrey'de yok.");
-            }
+            if(!varMi)
+                Console.WriteLine("Aradığınız şehir arrayde yoktur.");
             Console.ReadKey();
         }
     }
